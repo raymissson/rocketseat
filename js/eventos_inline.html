@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+           Eventos Inline 
+        </title>
+    </head>
+    <body>
+        <div id="app">
+            <button onclick="mostraAlerta()">Me pressione</button>
+            <button onmouseover="mostraAlerta()">Passe o mouse por cima</button>
+            <input onkeypress="mostraAlerta()"/>
+            <input type="text" name="nome" id="nome"/>
+            <button class="botao">Add</button>
+        </div>
+        <br><br>
+        <div id="criar">
+            <div class="box">
+
+            </div>
+        </div>
+        <script>
+            function mostraAlerta(){
+                alert('Botão foi clicado');
+            }
+            //var inputElement = document.getElementsByTagName('nome');
+            //var inputElement = document.getElementById('nome');
+            //var inputElement = document.getElementsByClassName('nome'); 
+            //var inputElement = document.querySelector('div#app input');
+            //var inputElement = document.querySelector('input[name=nome]');
+            //console.log(inputElement);
+            var inputElement = document.querySelector('input[name=nome]');
+            var btnElement = document.querySelector('button.botao');
+            btnElement.onclick = function(){
+                var text = inputElement.value;
+                alert(text);
+            }
+
+            // criar elementos 
+
+            var linkElement = document.createElement('a');
+
+            linkElement.setAttribute('href', 'https://github.com/raymissson');
+
+            var textElement = document.createTextNode('Acessar git do Raymison');
+
+            linkElement.appendChild(textElement);
+
+            var containerElement = document.querySelector('#criar');
+
+            containerElement.appendChild(linkElement);
+
+            // estilizar elementos
+
+            var boxElement = document.querySelector('.box');
+
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = '#f00';
+        </script>
+    </body>
+</html>
